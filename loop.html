@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunction(){
+            let i=11;//init
+            let sum=0;
+            let str='<h1>while loop</h1>';
+            let pid=document.getElementById('list')
+            while(i<=10){//condition
+                sum+=i//sum=sum+i;
+                str += `<h2>i=${i} and sum=${sum}</h2>`;
+                
+                i++;//incre
+            }
+            str+=`<hr><h1>do while loop</h1>`;
+            do{
+                sum+=i//sum=sum+i;
+                str += `<h2>i=${i} and sum=${sum}</h2>`;
+                
+                i++;//incre
+            }
+            while(i<=10);
+            str+=`<hr><h1>for loop</h1>`;
+            for(i=10;i>=1;i--){
+                str += `<h2>i=${i} </h2>`;
+            }
+            pid.innerHTML=str;
+            alert(`sum of 1 tp 10=${sum}`);
+        }
+    </script>
+</head>
+<body>
+    
+    <p id="list"></p>
+    <button onclick="myFunction()">
+        click
+    </button>
+</body>
+</html>
