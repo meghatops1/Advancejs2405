@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let printHello = function(){
+            alert("hello wolrd");
+        }
+        let add = (a,b) =>{
+            let c;
+            c=a+b;
+            alert(`addition=${c}`);
+        }
+        function evenFunction(num){
+            console.log(`num ${num} is even`);
+        }
+        function oddFunction(num){
+            console.log(`num ${num} is odd`);
+        }
+
+        function findEvenOdd(que,evenFunction,oddFunction){
+            let num=prompt(que);
+            if(num%2==0){
+                evenFunction(num);
+            }
+            else{
+                oddFunction(num);
+            }
+        }
+
+       function  myFunction(){
+            printHello();
+            add(100,200);
+            findEvenOdd("enter num",evenFunction,oddFunction);
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="myFunction()">Function expression</button>
+</body>
+</html>

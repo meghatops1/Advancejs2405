@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addition(a,b,x=10){
+            let c;
+            c=a+b+x;
+            console.log(`addition of ${a} and ${b} and ${x}=${c}`);
+        }
+        function square(a){
+            let result;
+            result = a*a*a;
+            return result;
+        }
+        function formAdd(){
+            let num1= document.getElementById('num1').value;
+            let num2= document.getElementById('num2').value;
+            num1= Number(num1);
+            num2= Number(num2);
+            addition(num1,num2);
+            //let ans=square(num1);
+            //console.log(ans);
+            console.log(square(num1));
+        }
+        function myFunction(){
+            let num1= prompt("enter num1");
+            let num2= prompt("enter num2");
+            let num3= prompt("enter num3");
+            num1= Number(num1);
+            num2= Number(num2);
+            num3= Number(num3);
+            addition(num1,num2,num3);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+        <input type="button" value="Click" onclick="formAdd()">
+    </form>
+    <button onclick="myFunction()">Use Prompt</button>
+</body>
+</html>

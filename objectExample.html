@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunction(){
+            let Employee = {
+                name:"megha",
+                title:"php/node trainer",
+                email:"ma@gmail.com"
+            }
+            Employee.printEmp = function(){
+                let str = ` 
+                <p>Name:${this.name}</p>
+                <p>Title:${this.title}</p>
+                <p>${this.email}</p>
+                `;
+                document.getElementById("emp").innerHTML=str;
+            }
+            Employee.printEmp();
+            console.log(Employee.name);
+            Employee.Edu = "BE IT";//add
+            Employee["exp done"]="4year";//multi word
+            Employee.name="Malay";//update
+            delete Employee.email;
+           
+                for(let key in Employee){
+                    console.log(`key=${key} and value=${Employee[key]}`);
+                }
+            let num="12.34em";
+            num= parseFloat(num);
+            alert(num);
+            
+            
+        }
+        let str="";
+        function constructorExample(){
+            function Product(pid,pname){
+                this.pid=pid;
+                this.pname=pname;
+                this.printProduct=function(){
+                     str += ` 
+                    <p>Name:${this.pid}</p>
+                    <p>Title:${this.pname}</p>
+                    `
+                }
+            }
+            
+            let product1=new Product(123,"laptop");
+            product1.printProduct();
+            let product2 = new Product(124,"keybord");
+            product2.printProduct();
+            document.getElementById("emp").innerHTML=str;
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="myFunction()">
+        click
+    </button>
+    <button onclick="constructorExample()">
+        click constructorExample
+    </button>
+    <div id="emp"></div>
+   
+</body>
+</html>

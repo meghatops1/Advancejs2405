@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function arrayFunction(){
+           let str="";
+           let veg =["potato","onion","brinjal"];
+           for(let i=0;i<veg.length;i++){
+                console.log(veg[i]);
+           }
+           for(let index of veg){
+                str+=`<li>${index}</li>`;
+           }
+           document.getElementById("vegList").innerHTML=str;
+           //Array Function
+           veg.push("xyz");
+           console.log(veg);
+           veg.pop();
+           console.log(veg);
+           veg.shift();
+           console.log(veg);
+           veg.unshift("mno");
+           console.log(veg);
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="arrayFunction()">Click</button>
+    <ul id="vegList">Vegetables</ul>
+</body>
+</html>

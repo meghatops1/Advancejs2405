@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<script>
+    function myFunction(){
+       let str="";
+       
+       
+       let list = ["home",["team1","team2"],"team","gallary"];
+       for(index of list){
+
+           if(index.length>0 && Array.isArray(index)){
+               str+=` <li class="dropdown">
+                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">${index[0]}
+                   <span class="caret"></span></a>
+                   <ul class="dropdown-menu">`;
+               for(i of index){
+                   str+=`<li><a href="#">${i}</a></li>`
+               }
+               str+=`</ul>
+                           </li>`;
+           }
+           else{
+               str+=`<li class="nav-item">
+                   <a class="nav-link" href="#">${index}</a>
+                 </li>`;
+           }
+          
+           
+       }
+       console.log(str);
+       document.getElementById("test").innerHTML=str;
+    }
+ </script>
+<body onload="myFunction()">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav" id="test">
+     
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  <h3>Navbar With Dropdown</h3>
+  <p>This example adds a dropdown menu for the "Page 1" button in the navigation bar.</p>
+</div>
+
+</body>
+</html>
