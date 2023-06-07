@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let todoList = new Map();
+        function myFunction(){
+            let mySet = new Set();
+            mySet.add("php");
+            mySet.add("Ajs");
+            mySet.add("Ajs");
+            console.log(mySet);
+            //mySet.delete("Ajs");
+            //mySet.clear();
+            mySet.forEach(function(value,key,set){
+                console.log(value);
+            })
+            console.log(mySet);
+
+            let taskList = new Map();
+            taskList.set("task1","report");
+            taskList.set("task2","assignment");
+            console.log(taskList);
+            taskList.delete("task2");
+            console.log(taskList);
+        }
+        function taskAdd(){
+            let taskName= document.getElementById("taskname").value;
+            todoList.set(taskName,taskName);
+            printList();
+            document.getElementById("taskname").value="";
+        }
+        function printList(){
+            str="";
+            todoList.forEach(function(value,key,map){
+               str+=`<tr>
+                <td>${value}</td>
+                <td><button id="${key}" onclick="deleteTask(this.id)">Delete</button></td>
+            </tr>`
+            })
+            document.getElementById("test").innerHTML=str;
+        }
+        function deleteTask(id){
+           todoList.delete(id);
+           printList();
+        }
+        function clearAll(){
+            todoList.clear();
+            printList();
+         }
+    </script>
+</head>
+<body>
+    <button onclick="myFunction()">click</button>
+    <div style="margin: 10px; margin-left:100px;border:2px solid black;width:60%;padding:50px">
+        <h1>ToDo List</h1>
+        <input type="text" name="" id="taskname">
+        <button onclick="taskAdd()">Add</button>
+        <button onclick="clearAll()">Clear</button>
+        <table border="1" style="margin-top: 10px;" >
+            <thead>
+                <tr>
+                    <th>TaskName</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="test">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

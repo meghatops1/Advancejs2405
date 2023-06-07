@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function revNum(){
+            let num = document.getElementById("num").value;
+            num = Number(num);
+            let rem,rev=0;
+            let i=0
+            while(num != 0){
+                console.log(`i=${i+1}`);
+                rem=num%10;
+                console.log(`rem=${rem}`);
+                rev=rev*10+rem;
+                console.log(`rev=${rev}`);
+                num = parseInt(num/10);
+                console.log(`num=${num}`);
+                i++;
+            }
+            document.write("revnum="+rev);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="num">
+    <button onclick="revNum()">Click</button>
+</body>
+</html>

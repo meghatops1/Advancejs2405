@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myfunction(){
+            let  fruits=["banana","mango","kiwi","apple"];
+            let veg=["potato","onion"];
+            console.log(fruits.concat(veg));
+            console.log(fruits.slice(1,4));
+            console.log("sortarray="+fruits.sort());
+            console.log("rev"+fruits.reverse());
+            delete fruits[1];
+            console.log(fruits);
+            fruits.splice(2);
+            console.log(fruits);
+            let numArray=[100,23,4,1,89,199];
+            numArray.sort(function(a,b){
+                return b-a;
+            })
+            console.log(numArray);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myfunction()">click</button>
+</body>
+</html>
